@@ -1,0 +1,19 @@
+alpha: 4
+beta: 3
+gamma: 1
+data_frac_constant: 0.8
+gauss_frac_constant: 0.
+n_axis_points: 24
+smooth_space_limits: [-5, 5]
+smooth_space_division: 0.05
+
+features:
+  - delta_phi_jj
+  - mjj
+  - mll
+  - jet1_pt
+  - jet2_pt
+  - lep1_pt
+  - lep2_pt
+
+weights: weight

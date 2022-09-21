@@ -1,0 +1,26 @@
+
+gauss_mean_scale: 0.25
+gauss_frac_scale: 0.25
+gauss_sigma_scale: 0.35
+gauss_width_factor: 0.125
+min_gauss_amplitude_frac: 0
+
+n_external_parameters: 4
+n_observables: 0
+use_leaky_relu: True
+batch_norm: True
+dropout: 0.1
+
+A1: 50
+A2: 50
+B1: 50
+B2: 50
+C: 3
+
+D2: 2
+num_gaussians: 50
+
+range_min: -5
+range_max: 5
+optimiser: 'adam'
+learning_rate: 0.001

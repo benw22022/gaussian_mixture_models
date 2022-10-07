@@ -1,0 +1,42 @@
+name: lep1_pT
+
+# is discrete?
+is_discrete: False
+
+# Latent data transform
+data_frac_constant: 0.3
+gauss_frac_constant: 0.8
+range_min: -5
+range_max: 5
+
+# Model initialization
+gauss_mean_scale: 0.25
+gauss_frac_scale: 0.25
+gauss_sigma_scale: 0.4
+gauss_width_factor: 0.4
+min_gauss_amplitude_frac: 0
+
+# Model architecture
+num_gaussians: 30
+n_observables: 0
+
+A1: 100
+A2: 100
+B1: 100
+B2: 50
+C: 3
+D2: 2
+
+use_leaky_relu: True
+batch_norm: True
+dropout: 0.1
+
+# Training config
+optimiser: 'adam'
+learning_rate: 0.001
+batch_size: 64
+epochs: 100
+validation_split: 0.1
+
+# misc
+latex_name: $j^{1}_{p_{T}}$

@@ -1,0 +1,70 @@
+
+---
+defaults:
+  - _self_
+  - features
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+
+# Hydra specific
+# TODO: Add help message, see: https://hydra.cc/docs/configure_hydra/app_help/ 
+hydra:
+  help:
+    template:
+      'TODO: Add help message'
+  run:
+    dir:
+      outputs/${run}_output/${now:%Y-%m-%d_%H-%M-%S}
+# Dataset
+features_conf_dir: '/home/bewilson/gaussian_mixture_models/config/features'
+dataset_path: '/home/bewilson/gaussian_mixture_models/data/lrsm.root'
+
+run: '1D_training'
+
+external_params:
+  - external_params[0]
+  # - external_params[1]
+
+n_external_parameters: 2
+
+weight: weight
+
+# Smoothing function
+alpha: 4
+beta: 3
+gamma: 1
+n_axis_points: 24
+smooth_space_limits: [-5, 5]
+smooth_space_division: 0.05
+
+# Callbacks
+callbacks:
+  # Learining rate schedd
+  lr_schedd:
+    enabled: True
+    factor: 0.75
+    patience: 3
+    min_lr: 1e-9
+
+  # Early stopping
+  early_stopping:
+    enabled: True
+    min_delta: 0.0001
+    patience: 5
+
+  # Model checkpoint
+  model_checkpoint:
+    enabled: True
+
+  # Tensorboard callback
+  tensorboard:
+    enabled: True
+  
+  # Simple logging
+  logging:
+    enabled: True
+  
+  # Confusion matrix tensorboard callback
+  # Note: This seems to be quite slow so is disabled by default
+  conf_matrix:
+    enabled: False

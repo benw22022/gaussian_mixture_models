@@ -1,0 +1,25 @@
+name: njets
+
+# is discrete?
+is_discrete: True
+
+# Model architecture
+A1: 50
+A2: 50
+B1: 50
+B2: 25
+C: 3
+
+use_leaky_relu: True
+batch_norm: True
+dropout: 0.1
+
+# Training config
+optimiser: 'adam'
+learning_rate: 0.001
+batch_size: 64
+epochs: 100
+validation_split: 0.1
+
+# misc
+latex_name: $n_{jets}$

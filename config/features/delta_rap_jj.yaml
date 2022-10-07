@@ -1,29 +1,29 @@
-delta_phi_jj:
+delta_rap_jj:
 
   # is discrete?
   is_discrete: False
 
   # Latent data transform
-  data_frac_constant: 0.3
+  data_frac_constant: 0.4
   gauss_frac_constant: 0.8
   range_min: -5
   range_max: 5
 
   # Model initialization
   gauss_mean_scale: 0.25
-  gauss_frac_scale: 0.1
-  gauss_sigma_scale: 0.65
-  gauss_width_factor: 0.65
+  gauss_frac_scale: 0.20
+  gauss_sigma_scale: 0.3
+  gauss_width_factor: 0.3
   min_gauss_amplitude_frac: 0
 
   # Model architecture
   num_gaussians: 50
   n_observables: 0
 
-  A1: 200
-  A2: 200
-  B1: 200
-  B2: 200
+  A1: 100
+  A2: 100
+  B1: 100
+  B2: 40
   C: 3
   D2: 2
 
@@ -33,10 +33,10 @@ delta_phi_jj:
 
   # Training config
   optimiser: 'adam'
-  learning_rate: 0.01
-  batch_size: 1024
+  learning_rate: 0.001
+  batch_size: 64
   epochs: 100
   validation_split: 0.1
 
   # misc
-  latex_name: $\Delta \phi_{jj}$
+  latex_name: $\Delta y_{jj}$
